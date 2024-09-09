@@ -39,7 +39,13 @@ func searchRange(_ nums: [Int], _ target: Int) -> [Int] {
         }
     }
     
-    return result.isEmpty ? [-1, -1] : result
+    if result.isEmpty {
+        return [-1, -1]
+    } else if result.count == 1 {
+        return [result[0], result[0]]
+    } else {
+        return result
+    }
 }
 
 final class LeetCode34Tests: XCTestCase {
@@ -58,6 +64,7 @@ final class LeetCode34Tests: XCTestCase {
         XCTAssertEqual(searchRange([0,4], 3), defaultFailure)
         XCTAssertEqual(searchRange([4,4], 3), defaultFailure)
         XCTAssertEqual(searchRange([3,3], 4), defaultFailure)
+        XCTAssertEqual(searchRange([0,3], 3), [1, 1])
     }
     
     private let defaultFailure = [-1, -1]
