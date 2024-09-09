@@ -57,6 +57,7 @@ final class LeetCode34Tests: XCTestCase {
         XCTAssertEqual(searchRange([2,2], 2), [0, 1])
         XCTAssertEqual(searchRange([0,4], 3), defaultFailure)
         XCTAssertEqual(searchRange([4,4], 3), defaultFailure)
+        XCTAssertEqual(searchRange([3,3], 4), defaultFailure)
     }
     
     private let defaultFailure = [-1, -1]
