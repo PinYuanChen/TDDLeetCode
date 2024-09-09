@@ -68,5 +68,10 @@ final class LeetCode34Tests: XCTestCase {
         XCTAssertEqual(searchRange([0,3], 0), [0, 0])
     }
     
+    func test_threeNums_withCorrectResult() {
+        XCTAssertEqual(searchRange([0,0,0], 3), defaultFailure)
+        XCTAssertEqual(searchRange([5,6,7], 3), defaultFailure)
+    }
+    
     private let defaultFailure = [-1, -1]
 }
