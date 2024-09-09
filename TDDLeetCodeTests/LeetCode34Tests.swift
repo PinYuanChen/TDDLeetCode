@@ -22,7 +22,6 @@ func searchRange(_ nums: [Int], _ target: Int) -> [Int] {
     var endIndex = -1
     
     while (start <= end) {
-        print(start, end)
         if nums[start] == target {
             if startIndex == -1 {
                 startIndex = start
@@ -41,7 +40,6 @@ func searchRange(_ nums: [Int], _ target: Int) -> [Int] {
         
         let mid = (start+end)/2
         if nums[mid] == target {
-//            start += 1
             end -= 1
         } else if nums[mid] > target {
             end = mid - 1
@@ -120,6 +118,11 @@ final class LeetCode34Tests: XCTestCase {
         XCTAssertEqual(searchRange([1,2,2,2,5], 2), [1, 3])
         XCTAssertEqual(searchRange([1,3,3,3,3], 3), [1, 4])
         XCTAssertEqual(searchRange([1,1,1,1,1], 1), [0, 4])
+    }
+    
+    func test_leedCodeCases() {
+        XCTAssertEqual(searchRange([5,7,7,8,8,10], 8), [3,4])
+        XCTAssertEqual(searchRange([5,7,7,8,8,10], 6), defaultFailure)
     }
     
     private let defaultFailure = [-1, -1]
