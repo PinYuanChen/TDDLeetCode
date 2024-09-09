@@ -105,5 +105,22 @@ final class LeetCode34Tests: XCTestCase {
         XCTAssertEqual(searchRange([1,1,1,1], 1), [0, 3])
     }
     
+    func test_fiveNums_withCorrectResult() {
+        XCTAssertEqual(searchRange([0,0,0,0,0], 3), defaultFailure)
+        XCTAssertEqual(searchRange([5,6,7,8,9], 3), defaultFailure)
+        XCTAssertEqual(searchRange([1,2,3,4,5], 1), [0, 0])
+        XCTAssertEqual(searchRange([1,2,3,4,5], 2), [1, 1])
+        XCTAssertEqual(searchRange([1,2,3,4,5], 3), [2, 2])
+        XCTAssertEqual(searchRange([1,2,3,4,5], 4), [3, 3])
+        XCTAssertEqual(searchRange([1,2,3,4,5], 5), [4, 4])
+        XCTAssertEqual(searchRange([1,1,3,4,5], 1), [0, 1])
+        XCTAssertEqual(searchRange([1,2,2,4,5], 2), [1, 2])
+        XCTAssertEqual(searchRange([1,2,3,3,5], 3), [2, 3])
+        XCTAssertEqual(searchRange([1,1,1,4,5], 1), [0, 2])
+        XCTAssertEqual(searchRange([1,2,2,2,5], 2), [1, 3])
+        XCTAssertEqual(searchRange([1,3,3,3,3], 3), [1, 4])
+        XCTAssertEqual(searchRange([1,1,1,1,1], 1), [0, 4])
+    }
+    
     private let defaultFailure = [-1, -1]
 }
