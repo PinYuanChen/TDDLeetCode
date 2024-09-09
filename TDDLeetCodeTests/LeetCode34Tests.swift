@@ -22,6 +22,7 @@ func searchRange(_ nums: [Int], _ target: Int) -> [Int] {
     var endIndex = -1
     
     while (start <= end) {
+        print(start, end)
         if nums[start] == target {
             if startIndex == -1 {
                 startIndex = start
@@ -40,7 +41,7 @@ func searchRange(_ nums: [Int], _ target: Int) -> [Int] {
         
         let mid = (start+end)/2
         if nums[mid] == target {
-            start += 1
+//            start += 1
             end -= 1
         } else if nums[mid] > target {
             end = mid - 1
@@ -96,6 +97,7 @@ final class LeetCode34Tests: XCTestCase {
         XCTAssertEqual(searchRange([1,2,3,4], 2), [1, 1])
         XCTAssertEqual(searchRange([1,2,3,4], 3), [2, 2])
         XCTAssertEqual(searchRange([1,2,3,4], 4), [3, 3])
+        XCTAssertEqual(searchRange([1,1,3,4], 1), [0, 1])
     }
     
     private let defaultFailure = [-1, -1]
